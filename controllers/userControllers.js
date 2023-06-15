@@ -83,7 +83,8 @@ export const sendResetLink=async(req,res)=>{
        
         const token =await generateToken(id)
         const resetLink=`http://localhost:8000/resetPassword/${token}`
-        const emailContent=html.replace("{{resetLink}}",resetLink)
+        let emailContent=html.replace("{{resetLink}}",resetLink)
+
      
 
         const mailOptions = {
