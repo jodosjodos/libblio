@@ -13,7 +13,7 @@ const __dirname = path.dirname(__filename);
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 import { User } from "../models/user.model.js";
-import hbs from "nodemailer-express-handlebars";
+
 
 
 dotenv.config();
@@ -52,7 +52,6 @@ export const resetPassword=async(req,res)=>{
     if(!user){
       res.status(StatusCodes.BAD_REQUEST).json({err:" some errors"})
     }
-    //  console.log(user);
     res.status(StatusCodes.OK).json({msg:"password has been updated successfully"})
   } catch (error) {
     res.status(StatusCodes.INTERNAL_SERVER_ERROR).json(error)
